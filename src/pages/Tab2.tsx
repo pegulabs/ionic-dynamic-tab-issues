@@ -26,7 +26,7 @@ const Tab2 = ({ setDisplayThirdTab }: Props) => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Tab 2 page" />
-        <h1 onClick={doIt}>shaaaaa</h1>
+        <h1 onClick={doIt}>CLICK ME TO MAKE THE THIRD TAB APPEAR!!!!!!!!1</h1>
       </IonContent>
     </IonPage>
   );
