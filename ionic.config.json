@@ -1,0 +1,7 @@
+{
+  "name": "tab-creation",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
