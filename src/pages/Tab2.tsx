@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 
-const Tab2: React.FC = () => {
+type Props = {
+  setDisplayThirdTab: (value: boolean) => void;
+};
+
+const Tab2 = ({ setDisplayThirdTab }: Props) => {
+  const doIt = useCallback(() => {
+    setDisplayThirdTab(true);
+  }, [setDisplayThirdTab]);
+
   return (
     <IonPage>
       <IonHeader>
@@ -18,6 +26,7 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Tab 2 page" />
+        <h1 onClick={doIt}>shaaaaa</h1>
       </IonContent>
     </IonPage>
   );
