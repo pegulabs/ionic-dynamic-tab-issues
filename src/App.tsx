@@ -37,6 +37,10 @@ import './theme/variables.css';
 const App = () => {
   const [displayThirdTab, setDisplayThirdTab] = useState<boolean>(false);
 
+  const renderFirstTab = useCallback(() => {
+    return <Tab1 setDisplayThirdTab={setDisplayThirdTab} />;
+  }, []);
+
   const renderSecondTab = useCallback(() => {
     return <Tab2 setDisplayThirdTab={setDisplayThirdTab} />;
   }, []);
@@ -56,7 +60,7 @@ const App = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path="/tab1" component={Tab1} exact={true} />
+            <Route path="/tab1" render={renderFirstTab} exact={true} />
             <Route path="/tab2" render={renderSecondTab} exact={true} />
             {renderThirdTabRoute()}
             <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
